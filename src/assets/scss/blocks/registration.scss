@@ -1,0 +1,81 @@
+.registration {
+    padding: 3rem 0;
+
+    background: $black url("../images/b-1.jpg") center no-repeat;
+    background-size: cover;
+
+    @include breakpoint($tablet-bp) {
+        padding: 1.5rem 0;
+     }
+}
+
+.registration__item {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    @include breakpoint($tablet-bp) {
+       flex-direction: column;
+    }
+}
+
+.registration__lash {
+    padding: 3rem 1.5rem;
+
+    border: 4px solid rgb(165 115 145 / 79%);
+    border-radius: 42px;
+    background: rgba(119, 12, 21, 0.2);
+
+    text-align: center;
+
+    @include breakpoint($tablet-bp) {
+        width: 100%;
+        margin-bottom: 1rem;
+     }
+
+     @include breakpoint($mobile-bp) {
+        padding: 1rem 0.5rem;
+    }
+}
+
+.registration__social {
+    padding: 3rem 1.5rem;
+
+    border: 4px solid rgb(165 115 145 / 79%);
+    border-radius: 42px;
+    background: rgba(119, 12, 21, 0.2);
+
+    @include breakpoint($tablet-bp) {
+        width: 100%;
+     }
+
+     @include breakpoint($mobile-bp) {
+        padding: 1rem 0.5rem;
+    }
+}
+
+.registration__title {
+    margin-bottom: 1.5rem;
+
+    font-size: 1.5rem;
+    color: $white;
+    line-height: 1;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    text-align: center;
+
+    @include breakpoint($tablet-bp) {
+        font-size: 2rem;
+     }
+
+     @include breakpoint($medium-bp) {
+        font-size: 1.6rem;
+    }
+
+    @include breakpoint($mobile-bp) {
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+    }
+
+}

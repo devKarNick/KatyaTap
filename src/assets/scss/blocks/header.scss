@@ -1,0 +1,25 @@
+.header {
+    width: 100%;
+
+    background: rgba(0, 0, 0, 0.97);
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 20;
+
+    @include breakpoint($tablet-bp) {
+        padding: 1rem 0;
+    }
+
+    @include breakpoint($mobile-bp) {
+        padding: 0.5rem 0;
+    }
+
+.header__item {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+}

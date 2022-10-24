@@ -1,0 +1,94 @@
+.btn {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.6em 2.1em;
+
+    background: $btn;
+
+    border: none;
+    cursor: pointer;
+    border-radius: 3em;
+
+    font-family: inherit;
+    font-size: 1.2rem;
+    line-height: 1.1;
+    font-weight: 500;
+    color: $white;
+    text-decoration: none;
+
+    transition: background .2s linear, color .2s linear;
+
+    &:hover {
+        text-decoration: none;
+        background: darken($btn, 20%);
+        color: darken($white, 20%);
+    }
+
+    &--price {
+        display: none;
+
+        &.active {
+            display: inline-block;
+        }
+    }
+
+    &--lash {
+        background: -webkit-linear-gradient(top left, $lash, #CB1918);
+        background: -moz-linear-gradient(top left, $lash, #CB1918);
+        background: linear-gradient(to bottom right, $lash, #CB1918);
+
+        &:hover,
+        &:focus {
+            background-color: darken($lash, 15%);
+        }
+    }
+
+    &--disabled {
+        background: #ccc;
+
+        &:hover {
+            background: #ccc;
+            color: #fff;
+        }
+    }
+
+    &--red {
+        background-color: $red;
+        box-shadow: 0 7px 17px -10px rgba($red, .2);
+
+        &:hover,
+        &:focus {
+            background-color: darken($red, 15%);
+        }
+    }
+
+    &--blue {
+        background-color: $blue;
+        box-shadow: 0 7px 17px -10px rgba($blue, .2);
+
+        &:hover {
+            background-color: darken($blue, 15%);
+        }
+    }
+
+    &--rounded {
+        border-radius: 0.41em;
+    }
+
+    &--sm {
+        padding: 0.7em 1.25em;
+    }
+
+    @include breakpoint($tablet-bp) {
+        font-size: 0.9rem;
+    }
+
+    @include breakpoint($medium-bp) {
+        font-size: 0.8rem;
+    }
+
+    @include breakpoint($mobile-bp) {
+        font-size: 0.7rem;
+    }
+
+}

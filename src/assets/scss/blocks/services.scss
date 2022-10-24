@@ -1,0 +1,105 @@
+.services { 
+    background: linear-gradient(45deg, #30cfd0, #330867);
+    background-size: cover;
+}
+
+.services__title {
+    padding-top: 1rem;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: $white;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    span {
+        color: $dpink;
+    }
+
+    @include breakpoint($mobile-bp) {
+        font-size: 1.6rem;
+    }
+}
+
+.services__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint($tablet-bp) {
+        flex-direction: column;
+    }
+}
+
+.services__item {
+    width: 33.33333%;
+    padding: 2rem 1rem;
+    margin: 0.5rem 0;
+
+    &:nth-child(even) {
+        margin: 0;
+    }
+
+    @include breakpoint($tablet-bp) {
+        width: 100%;
+
+        padding: 1rem;
+    }
+
+    @include breakpoint($mobile-bp) {
+        padding: 0.5rem 0;
+    }
+
+
+    &:hover {
+        .services__img {
+            transform: translate3d(-10px,-10px,0);
+        }
+
+        .services__img img {
+            opacity: .1;
+        }
+
+        .services__text {
+            opacity: 1;
+        }
+    }
+}
+
+.services__img {
+    background: linear-gradient(to bottom,#81a9f3,#1f8359);
+    transition: transform .2s linear;
+}
+
+.services__img img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+
+    transition: opacity .2s linear;
+}
+
+.services__text {
+    width: 100%;
+
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    color: $white;
+    opacity: 0;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 2;
+    transform: translate3d(0, -50%, 0px);
+
+    transition: opacity .2s linear;
+}
+
+.services__inner {
+    position: relative;
+    background-color: #95e1d3;
+}

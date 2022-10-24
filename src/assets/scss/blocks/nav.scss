@@ -1,0 +1,52 @@
+.nav {
+    display: flex;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    @include breakpoint($tablet-bp) {
+        display: none;
+        width: 100%; 
+		flex-direction: column;
+
+		background-color: rgba(0, 0, 0, 0.97);
+		text-align: right;
+
+		position: absolute;
+		top: 100%;
+		right: 0;
+        z-index: 30;
+
+        &.active {
+            display: flex;
+        }
+    }
+
+}
+
+.nav__link {
+    display: inline-block;
+	vertical-align: top;
+    padding: 1rem;
+
+	margin-left: 1rem;
+	font-weight: 400;
+	text-decoration: none;
+    opacity: .75;
+
+	transition: opacity .1s linear;
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+
+    @include breakpoint($tablet-bp) {
+        font-size: 0.9rem;
+        font-weight: 300; 
+        padding: 0.5rem;
+    }
+}

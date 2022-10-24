@@ -1,0 +1,264 @@
+.modal {
+    display: none;
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+
+    background-color: rgba(6, 15, 49, 0.9);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &.show {
+        display: flex;
+    }
+}
+
+.modal__content {
+    width: 100%;
+    max-width: 700px;
+    padding: 2rem;
+    position: relative;
+
+    background-color: $modal;
+    background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+    border-radius: 5px;
+
+    transform: scale(0);
+    transition: transform .2s linear;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    &--vip {
+        background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+    }
+
+    &--group {
+        background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+    }
+
+    &--consultation {
+
+        background: #719166;
+        background: -webkit-linear-gradient(top left, #719166, #563AB8);
+        background: -moz-linear-gradient(top left, #719166, #563AB8);
+        background: linear-gradient(to bottom right, #719166, #563AB8);
+    }
+
+    @include breakpoint($mobile-bp) {
+        padding: 0.8rem;
+    }
+}
+
+
+
+.modal__close {
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: .5;
+
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+
+    transition: transform .2s linear, opacity .2s linear;
+
+    &:hover {
+        transform: rotate(90deg);
+        opacity: 1;
+    }
+}
+
+.modal__img {
+    display: block;
+    max-width: 2.3rem;
+    height: auto;
+    object-fit: cover;
+
+    @include breakpoint($medium-bp) {
+        max-width: 0.9rem;
+    }
+
+    @include breakpoint($mobile-bp) {
+        max-width: 0.6rem;
+    }
+}
+
+.modal__title {
+    font-size: 1.8rem;
+    color: $white;
+    line-height: 1;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    span {
+        font-weight: 700;
+        color: $pink;
+    }
+
+    @include breakpoint($extraLarge-bp) {
+        font-size: 1.7rem;
+    }
+
+    @include breakpoint($tablet-bp) {
+        font-size: 1.4rem;
+    }
+
+    @include breakpoint($medium-bp) {
+        font-size: 1.1rem;
+    }
+
+    @include breakpoint($mobile-bp) {
+        font-size: 0.7rem;
+    }
+}
+
+.modal__suptitle {
+    margin: 0.5rem 0 1rem 0;
+
+    font-size: 1.4rem;
+    color: $white;
+    line-height: 1;
+    font-weight: 400;
+
+    @include breakpoint($tablet-bp) {
+        font-size: 1.2rem;
+    }
+
+    @include breakpoint($medium-bp) {
+        font-size: 1rem;
+    }
+
+    @include breakpoint($mobile-bp) {
+        font-size: 0.5rem;
+    }
+}
+
+.modal__text {
+    margin-bottom: 1rem;
+
+    font-family: inherit;
+    font-size: 1rem;
+    color: $white;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    @include breakpoint($tablet-bp) {
+        font-size: 0.8rem;
+    }
+
+    @include breakpoint($mobile-bp) {
+        font-size: 0.5rem;
+    }
+}
+
+.modal__text-catalog {
+    padding-inline-start: 1rem;
+}
+
+.modal__text-content {
+    padding: 1rem 1rem;
+
+    border: 1px solid #fff;
+    border-radius: $radius;
+}
+
+.modal__text-list {
+    margin: 0.5rem 0;
+    padding: 0;
+
+    list-style: inside square url("assets/images/c-1.svg")
+    
+}
+
+.modal__text-title {
+    margin: 2rem 0 1rem 0;
+    color: $white;
+
+    @include breakpoint($medium-bp) {
+        margin: 1rem;
+    }
+
+    @include breakpoint($mobile-bp) {
+        margin: 0.3rem;
+        font-size: 0.7rem;
+    }
+}
+
+.modal__footer {
+    display: flex;    
+    padding: 1rem 0;
+
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    text-align: center;
+
+    @include breakpoint($medium-bp) {
+        padding-top: 1.7rem;
+    }
+}
+
+.modal__footer-form {
+    display: flex;
+    font-size: 0.5rem;
+    margin-bottom: 0.3rem;
+    align-items: center;
+    text-align: center;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.modal__footer-label {
+    padding-left: 0.5rem;
+
+    font-size: 1rem;
+    color: #ccc;
+    text-align: center;
+
+    @include breakpoint($mobile-bp) {
+        padding-left: 0.3rem;
+        font-size: 0.6rem;
+    }
+}
+
+.modal__footer-link {
+    font-weight: 600;
+    color: $darkblue;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.modal__footer-checkbox {
+    padding-left: 1rem;
+    width: 15px;
+    height: 15px;
+
+    &:checked + .modal__footer-label {
+        color: #fff;
+    }
+
+    @include breakpoint($mobile-bp) {
+        width: 10px;
+        height: 10px;
+    }
+}
+
